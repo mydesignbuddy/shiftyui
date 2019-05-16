@@ -11,7 +11,7 @@ Shifty defines common UI components that can easily support most UI style guides
 - **Material (Roadmap)** - Based on Google's Material Design https://material.io/design/
 - **Fluent (Default)** - Based on Microsoft's Fluent Design https://developer.microsoft.com/en-us/windows/apps/design
 - **Cocoa (In Process)** - Based on Apple's macOS Human Interface Guidelines https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/
-- **Cocoa Touch (Roadmap)** - Based on Apple's macOS Human Interface Guidelines https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+- **Cocoa Touch (Roadmap)** - Based on Apple's iOS Human Interface Guidelines https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
 
 ## Supported Frameworks
 
