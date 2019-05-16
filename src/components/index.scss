@@ -1,0 +1,16 @@
+.shft {
+  @import "./vars.scss";
+  @import "./common/widths.scss";
+  @import "./common/states.scss";
+  @import "./shft-container/shft-container.scss";
+  @import "./shft-button/shft-button.scss";
+  @import "./shft-card/shft-card.scss";
+  @import "./shft-checkbox/shft-checkbox.scss";
+  @import "./shft-dropdown/shft-dropdown.scss";
+  @import "./shft-flex/shft-flex.scss";
+  @import "./shft-input/shft-textbox.scss";
+  @import "./shft-radio/shft-radio.scss";
+  @import "./shft-slider/shft-slider.scss";
+  @import "./shft-tabs/shft-tabs.scss";
+  @import "./shft-window/shft-window.scss";
+}

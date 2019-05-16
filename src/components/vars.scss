@@ -1,0 +1,19 @@
+$primary-color: #3176bb;
+$color-default-light: #fff;
+$color-default-lighter: #cccccd;
+$color-default: #7a7b7b;
+$color-dark-default: #7a7b7b;
+
+@mixin baseFont($size: 0.875rem, $weight: 200, $lineHeight: 1.1) {
+    font-family: "Segoe UI", "Open Sans", sans-serif, serif;
+    font-size: $size;
+    line-height: $lineHeight;
+    font-weight: $weight;
+}
+
+@mixin widthFillAvaliable {
+    width: 100%;
+    width: -moz-available; /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+}

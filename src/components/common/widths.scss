@@ -1,0 +1,8 @@
+$stepPer: 5; // step of % for created classes
+
+$loopsPer: round(100 / $stepPer);
+@for $i from 0 through $loopsPer {
+  .w-#{$i*$stepPer} {
+      width: #{$i*$stepPer + "%"};
+  }
+}

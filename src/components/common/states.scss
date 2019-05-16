@@ -1,0 +1,37 @@
+
+@mixin disabled($bgcolor, $color, $bcolor) {
+  &[disabled],
+  &:disabled,
+  &.disabled {
+    @if $bgcolor != nochange {
+      background-color: $bgcolor;
+    }
+
+    @if $color != nochange {
+      color: $color;
+    }
+
+    @if $bcolor != nochange {
+      border-color: $bcolor;
+    }
+
+    cursor: default;
+  }
+}
+
+@mixin hover($bgcolor, $color, $bcolor) {
+  &.hover:not(:disabled):not(.disabled):not([disabled]),
+  &:hover:not(:disabled):not(.disabled):not([disabled]) { 
+    @if $bcolor != nochange {
+      border-color: $bcolor;
+    }
+
+    @if $bgcolor != nochange {
+      background-color: $bgcolor;
+    }
+
+    @if $color != nochange {
+      color: $color;
+    }
+  }
+}

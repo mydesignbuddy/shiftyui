@@ -1,0 +1,15 @@
+@import "../vars.scss";
+
+.shft-tabs {
+  .shft-button {
+    &.active {
+      outline: 3px solid blue;
+    }
+  }
+  .shft-tab {
+    slot[name=title] {
+      display: none;
+      
+    }
+  }
+}

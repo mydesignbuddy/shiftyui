@@ -1,0 +1,32 @@
+{
+  "name": "shiftyui",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "unpkg": "dist/ionic.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs && npm run build:styles",
+    "build:styles": "node-sass --output-style=compressed src/components/index.scss dist/shifty.css",
+    "start": "concurrently \"stencil build --dev --watch --serve\" \"npm run watch:styles\" \"npm run build:styles\" ",
+    "watch:styles": "node-sass --output-style=compressed src/components/index.scss www/build/shifty.css --source-map www/build && node-sass -w src/components/index.scss www/build/shifty.css --source-map www/build",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "node-sass": "^4.12.0",
+    "reflect-metadata": "^0.1.13",
+    "stencil-fragment": "^1.0.1"
+  },
+  "devDependencies": {
+    "@stencil/core": "~0.16.2",
+    "@stencil/sass": "^0.2.1"
+  },
+  "license": "MIT"
+}

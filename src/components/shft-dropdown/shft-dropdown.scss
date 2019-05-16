@@ -1,0 +1,64 @@
+@import "../vars.scss";
+
+.shft.dropdown {
+    position: relative;
+
+    @include baseFont;
+
+    select {
+        @include baseFont(0.875rem, 400);
+
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        position: relative;
+        border: 2px solid $color-default;
+        padding: 0.3125rem;
+        padding-right: 1.5em;
+        font-size: 100%;
+        margin: 0.15625rem 0;
+        margin-right: 0.25em;
+        outline: none;
+        border-radius: 0;
+        background-color: #fff;
+
+        &:focus {
+            border-color: $primary-color;
+        }
+
+        &:disabled {
+            background-color: #f1f1f1;
+            color: #b4b4b9;
+            cursor: default;
+            border-color: #d1d1d1;
+        }
+
+        &:disabled ~ .button {
+            background: #b2b2b7;
+        }
+    }
+
+    .button {
+        content: " ";
+        position: absolute;
+        display: block;
+        bottom: -1px;
+        right: 4px;
+        width: 21px;
+        height: 24px;
+        margin-right: 4px;
+        pointer-events: none;
+
+        &:after {
+            content: " ";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 6px 0 6px;
+            border-color: $color-default transparent transparent transparent;
+            position: absolute;
+            top: 0.75em;
+            right: 0.25em;
+        }
+    }
+}
