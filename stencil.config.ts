@@ -3,6 +3,7 @@ import { sass } from "@stencil/sass";
 
 export const config: Config = {
   namespace: "shifty",
+  globalStyle: "src/index.scss",
   outputTargets: [
     { type: "dist" },
     { type: "docs" },

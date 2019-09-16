@@ -59,7 +59,7 @@ shft-button {
     &.primary {
       background: #0079d8;
       color: #fff;
-      border-color: #0079d8;
+      border-color: #4e9edb;
 
       @include disabled(#eaeaea, #bebebe, transparent);
       @include hover(mix(black, #0079d8, 25%), #fff, mix(black, #0079d8, 25%));

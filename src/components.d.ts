@@ -184,6 +184,9 @@ export namespace Components {
     'minimize'?: boolean;
     'title'?: string;
   }
+
+  interface DemoNav {}
+  interface DemoNavAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
@@ -200,6 +203,7 @@ declare global {
     'ShftTab': Components.ShftTab;
     'ShftTabs': Components.ShftTabs;
     'ShftWindow': Components.ShftWindow;
+    'DemoNav': Components.DemoNav;
   }
 
   interface StencilIntrinsicElements {
@@ -215,6 +219,7 @@ declare global {
     'shft-tab': Components.ShftTabAttributes;
     'shft-tabs': Components.ShftTabsAttributes;
     'shft-window': Components.ShftWindowAttributes;
+    'demo-nav': Components.DemoNavAttributes;
   }
 
 
@@ -290,6 +295,12 @@ declare global {
     new (): HTMLShftWindowElement;
   };
 
+  interface HTMLDemoNavElement extends Components.DemoNav, HTMLStencilElement {}
+  var HTMLDemoNavElement: {
+    prototype: HTMLDemoNavElement;
+    new (): HTMLDemoNavElement;
+  };
+
   interface HTMLElementTagNameMap {
     'shft-button': HTMLShftButtonElement
     'shft-card': HTMLShftCardElement
@@ -303,6 +314,7 @@ declare global {
     'shft-tab': HTMLShftTabElement
     'shft-tabs': HTMLShftTabsElement
     'shft-window': HTMLShftWindowElement
+    'demo-nav': HTMLDemoNavElement
   }
 
   interface ElementTagNameMap {
@@ -318,6 +330,7 @@ declare global {
     'shft-tab': HTMLShftTabElement;
     'shft-tabs': HTMLShftTabsElement;
     'shft-window': HTMLShftWindowElement;
+    'demo-nav': HTMLDemoNavElement;
   }
 
 
