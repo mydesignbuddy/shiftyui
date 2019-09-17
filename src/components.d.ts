@@ -5,9 +5,10 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+import {
+  MatchResults,
+} from '@stencil/router';
 import {
   Sizes,
   Type,
@@ -19,9 +20,15 @@ import {
   Justify,
 } from './components/common/flex';
 
-
 export namespace Components {
-
+  interface AppHome {}
+  interface AppProfile {
+    'match': MatchResults;
+  }
+  interface AppRoot {}
+  interface DemoButton {}
+  interface DemoNav {}
+  interface PageNotFound {}
   interface ShftButton {
     'class': string;
     'disabled': boolean;
@@ -29,39 +36,17 @@ export namespace Components {
     'type': Type;
     'variance': Variance;
   }
-  interface ShftButtonAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-    'disabled'?: boolean;
-    'size'?: Sizes;
-    'type'?: Type;
-    'variance'?: Variance;
-  }
-
   interface ShftCard {
     'class': string;
   }
-  interface ShftCardAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-  }
-
   interface ShftCheckbox {
     'checked': boolean;
     'class': string;
     'disabled': boolean;
   }
-  interface ShftCheckboxAttributes extends StencilHTMLAttributes {
-    'checked'?: boolean;
-    'class'?: string;
-    'disabled'?: boolean;
-  }
-
   interface ShftContainer {
     'class': string;
   }
-  interface ShftContainerAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-  }
-
   interface ShftDropdown {
     'alignSelf': Align;
     'class': string;
@@ -70,15 +55,6 @@ export namespace Components {
     'flexShrink': number;
     'justifySelf': Justify;
   }
-  interface ShftDropdownAttributes extends StencilHTMLAttributes {
-    'alignSelf'?: Align;
-    'class'?: string;
-    'disabled'?: boolean;
-    'flexGrow'?: number;
-    'flexShrink'?: number;
-    'justifySelf'?: Justify;
-  }
-
   interface ShftFlex {
     'alignContent': Align;
     'alignItems': Align;
@@ -90,31 +66,6 @@ export namespace Components {
     'justifyItems': Justify;
     'justifySelf': Justify;
   }
-  interface ShftFlexAttributes extends StencilHTMLAttributes {
-    'alignContent'?: Align;
-    'alignItems'?: Align;
-    'alignSelf'?: Align;
-    'class'?: string;
-    'flexDirection'?: Direction;
-    'inline'?: boolean;
-    'justifyContent'?: Justify;
-    'justifyItems'?: Justify;
-    'justifySelf'?: Justify;
-  }
-
-  interface ShftTextbox {
-    'class': string;
-    'disabled': boolean;
-    'multiline': boolean;
-    'value': string;
-  }
-  interface ShftTextboxAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-    'disabled'?: boolean;
-    'multiline'?: boolean;
-    'value'?: string;
-  }
-
   interface ShftRadio {
     'alignSelf': Align;
     'checked': boolean;
@@ -125,49 +76,27 @@ export namespace Components {
     'group': string;
     'justifySelf': Justify;
   }
-  interface ShftRadioAttributes extends StencilHTMLAttributes {
-    'alignSelf'?: Align;
-    'checked'?: boolean;
-    'class'?: string;
-    'disabled'?: boolean;
-    'flexGrow'?: number;
-    'flexShrink'?: number;
-    'group'?: string;
-    'justifySelf'?: Justify;
-  }
-
   interface ShftSlider {
     'class': string;
     'disabled': boolean;
     'tickIntervals': number;
   }
-  interface ShftSliderAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-    'disabled'?: boolean;
-    'tickIntervals'?: number;
-  }
-
   interface ShftTab {
     'class': string;
     'disabled': boolean;
     'key': string;
   }
-  interface ShftTabAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-    'disabled'?: boolean;
-    'key'?: string;
-  }
-
   interface ShftTabs {
     'class': string;
     'disabled': boolean;
-    'setActiveTab': (key: string) => void;
+    'setActiveTab': (key: string) => Promise<void>;
   }
-  interface ShftTabsAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-    'disabled'?: boolean;
+  interface ShftTextbox {
+    'class': string;
+    'disabled': boolean;
+    'multiline': boolean;
+    'value': string;
   }
-
   interface ShftWindow {
     'class': string;
     'close': boolean;
@@ -176,52 +105,46 @@ export namespace Components {
     'minimize': boolean;
     'title': string;
   }
-  interface ShftWindowAttributes extends StencilHTMLAttributes {
-    'class'?: string;
-    'close'?: boolean;
-    'disabled'?: boolean;
-    'maximize'?: boolean;
-    'minimize'?: boolean;
-    'title'?: string;
-  }
-
-  interface DemoNav {}
-  interface DemoNavAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'ShftButton': Components.ShftButton;
-    'ShftCard': Components.ShftCard;
-    'ShftCheckbox': Components.ShftCheckbox;
-    'ShftContainer': Components.ShftContainer;
-    'ShftDropdown': Components.ShftDropdown;
-    'ShftFlex': Components.ShftFlex;
-    'ShftTextbox': Components.ShftTextbox;
-    'ShftRadio': Components.ShftRadio;
-    'ShftSlider': Components.ShftSlider;
-    'ShftTab': Components.ShftTab;
-    'ShftTabs': Components.ShftTabs;
-    'ShftWindow': Components.ShftWindow;
-    'DemoNav': Components.DemoNav;
-  }
 
-  interface StencilIntrinsicElements {
-    'shft-button': Components.ShftButtonAttributes;
-    'shft-card': Components.ShftCardAttributes;
-    'shft-checkbox': Components.ShftCheckboxAttributes;
-    'shft-container': Components.ShftContainerAttributes;
-    'shft-dropdown': Components.ShftDropdownAttributes;
-    'shft-flex': Components.ShftFlexAttributes;
-    'shft-textbox': Components.ShftTextboxAttributes;
-    'shft-radio': Components.ShftRadioAttributes;
-    'shft-slider': Components.ShftSliderAttributes;
-    'shft-tab': Components.ShftTabAttributes;
-    'shft-tabs': Components.ShftTabsAttributes;
-    'shft-window': Components.ShftWindowAttributes;
-    'demo-nav': Components.DemoNavAttributes;
-  }
 
+  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
+  var HTMLAppHomeElement: {
+    prototype: HTMLAppHomeElement;
+    new (): HTMLAppHomeElement;
+  };
+
+  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
+  var HTMLAppProfileElement: {
+    prototype: HTMLAppProfileElement;
+    new (): HTMLAppProfileElement;
+  };
+
+  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
+  var HTMLAppRootElement: {
+    prototype: HTMLAppRootElement;
+    new (): HTMLAppRootElement;
+  };
+
+  interface HTMLDemoButtonElement extends Components.DemoButton, HTMLStencilElement {}
+  var HTMLDemoButtonElement: {
+    prototype: HTMLDemoButtonElement;
+    new (): HTMLDemoButtonElement;
+  };
+
+  interface HTMLDemoNavElement extends Components.DemoNav, HTMLStencilElement {}
+  var HTMLDemoNavElement: {
+    prototype: HTMLDemoNavElement;
+    new (): HTMLDemoNavElement;
+  };
+
+  interface HTMLPageNotFoundElement extends Components.PageNotFound, HTMLStencilElement {}
+  var HTMLPageNotFoundElement: {
+    prototype: HTMLPageNotFoundElement;
+    new (): HTMLPageNotFoundElement;
+  };
 
   interface HTMLShftButtonElement extends Components.ShftButton, HTMLStencilElement {}
   var HTMLShftButtonElement: {
@@ -259,12 +182,6 @@ declare global {
     new (): HTMLShftFlexElement;
   };
 
-  interface HTMLShftTextboxElement extends Components.ShftTextbox, HTMLStencilElement {}
-  var HTMLShftTextboxElement: {
-    prototype: HTMLShftTextboxElement;
-    new (): HTMLShftTextboxElement;
-  };
-
   interface HTMLShftRadioElement extends Components.ShftRadio, HTMLStencilElement {}
   var HTMLShftRadioElement: {
     prototype: HTMLShftRadioElement;
@@ -289,57 +206,153 @@ declare global {
     new (): HTMLShftTabsElement;
   };
 
+  interface HTMLShftTextboxElement extends Components.ShftTextbox, HTMLStencilElement {}
+  var HTMLShftTextboxElement: {
+    prototype: HTMLShftTextboxElement;
+    new (): HTMLShftTextboxElement;
+  };
+
   interface HTMLShftWindowElement extends Components.ShftWindow, HTMLStencilElement {}
   var HTMLShftWindowElement: {
     prototype: HTMLShftWindowElement;
     new (): HTMLShftWindowElement;
   };
-
-  interface HTMLDemoNavElement extends Components.DemoNav, HTMLStencilElement {}
-  var HTMLDemoNavElement: {
-    prototype: HTMLDemoNavElement;
-    new (): HTMLDemoNavElement;
-  };
-
   interface HTMLElementTagNameMap {
-    'shft-button': HTMLShftButtonElement
-    'shft-card': HTMLShftCardElement
-    'shft-checkbox': HTMLShftCheckboxElement
-    'shft-container': HTMLShftContainerElement
-    'shft-dropdown': HTMLShftDropdownElement
-    'shft-flex': HTMLShftFlexElement
-    'shft-textbox': HTMLShftTextboxElement
-    'shft-radio': HTMLShftRadioElement
-    'shft-slider': HTMLShftSliderElement
-    'shft-tab': HTMLShftTabElement
-    'shft-tabs': HTMLShftTabsElement
-    'shft-window': HTMLShftWindowElement
-    'demo-nav': HTMLDemoNavElement
-  }
-
-  interface ElementTagNameMap {
+    'app-home': HTMLAppHomeElement;
+    'app-profile': HTMLAppProfileElement;
+    'app-root': HTMLAppRootElement;
+    'demo-button': HTMLDemoButtonElement;
+    'demo-nav': HTMLDemoNavElement;
+    'page-not-found': HTMLPageNotFoundElement;
     'shft-button': HTMLShftButtonElement;
     'shft-card': HTMLShftCardElement;
     'shft-checkbox': HTMLShftCheckboxElement;
     'shft-container': HTMLShftContainerElement;
     'shft-dropdown': HTMLShftDropdownElement;
     'shft-flex': HTMLShftFlexElement;
-    'shft-textbox': HTMLShftTextboxElement;
     'shft-radio': HTMLShftRadioElement;
     'shft-slider': HTMLShftSliderElement;
     'shft-tab': HTMLShftTabElement;
     'shft-tabs': HTMLShftTabsElement;
+    'shft-textbox': HTMLShftTextboxElement;
     'shft-window': HTMLShftWindowElement;
-    'demo-nav': HTMLDemoNavElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface AppHome extends JSXBase.HTMLAttributes<HTMLAppHomeElement> {}
+  interface AppProfile extends JSXBase.HTMLAttributes<HTMLAppProfileElement> {
+    'match'?: MatchResults;
+  }
+  interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
+  interface DemoButton extends JSXBase.HTMLAttributes<HTMLDemoButtonElement> {}
+  interface DemoNav extends JSXBase.HTMLAttributes<HTMLDemoNavElement> {}
+  interface PageNotFound extends JSXBase.HTMLAttributes<HTMLPageNotFoundElement> {}
+  interface ShftButton extends JSXBase.HTMLAttributes<HTMLShftButtonElement> {
+    'class'?: string;
+    'disabled'?: boolean;
+    'size'?: Sizes;
+    'type'?: Type;
+    'variance'?: Variance;
+  }
+  interface ShftCard extends JSXBase.HTMLAttributes<HTMLShftCardElement> {
+    'class'?: string;
+  }
+  interface ShftCheckbox extends JSXBase.HTMLAttributes<HTMLShftCheckboxElement> {
+    'checked'?: boolean;
+    'class'?: string;
+    'disabled'?: boolean;
+  }
+  interface ShftContainer extends JSXBase.HTMLAttributes<HTMLShftContainerElement> {
+    'class'?: string;
+  }
+  interface ShftDropdown extends JSXBase.HTMLAttributes<HTMLShftDropdownElement> {
+    'alignSelf'?: Align;
+    'class'?: string;
+    'disabled'?: boolean;
+    'flexGrow'?: number;
+    'flexShrink'?: number;
+    'justifySelf'?: Justify;
+  }
+  interface ShftFlex extends JSXBase.HTMLAttributes<HTMLShftFlexElement> {
+    'alignContent'?: Align;
+    'alignItems'?: Align;
+    'alignSelf'?: Align;
+    'class'?: string;
+    'flexDirection'?: Direction;
+    'inline'?: boolean;
+    'justifyContent'?: Justify;
+    'justifyItems'?: Justify;
+    'justifySelf'?: Justify;
+  }
+  interface ShftRadio extends JSXBase.HTMLAttributes<HTMLShftRadioElement> {
+    'alignSelf'?: Align;
+    'checked'?: boolean;
+    'class'?: string;
+    'disabled'?: boolean;
+    'flexGrow'?: number;
+    'flexShrink'?: number;
+    'group'?: string;
+    'justifySelf'?: Justify;
+  }
+  interface ShftSlider extends JSXBase.HTMLAttributes<HTMLShftSliderElement> {
+    'class'?: string;
+    'disabled'?: boolean;
+    'tickIntervals'?: number;
+  }
+  interface ShftTab extends JSXBase.HTMLAttributes<HTMLShftTabElement> {
+    'class'?: string;
+    'disabled'?: boolean;
+    'key'?: string;
+  }
+  interface ShftTabs extends JSXBase.HTMLAttributes<HTMLShftTabsElement> {
+    'class'?: string;
+    'disabled'?: boolean;
+  }
+  interface ShftTextbox extends JSXBase.HTMLAttributes<HTMLShftTextboxElement> {
+    'class'?: string;
+    'disabled'?: boolean;
+    'multiline'?: boolean;
+    'value'?: string;
+  }
+  interface ShftWindow extends JSXBase.HTMLAttributes<HTMLShftWindowElement> {
+    'class'?: string;
+    'close'?: boolean;
+    'disabled'?: boolean;
+    'maximize'?: boolean;
+    'minimize'?: boolean;
+    'title'?: string;
+  }
+
+  interface IntrinsicElements {
+    'app-home': AppHome;
+    'app-profile': AppProfile;
+    'app-root': AppRoot;
+    'demo-button': DemoButton;
+    'demo-nav': DemoNav;
+    'page-not-found': PageNotFound;
+    'shft-button': ShftButton;
+    'shft-card': ShftCard;
+    'shft-checkbox': ShftCheckbox;
+    'shft-container': ShftContainer;
+    'shft-dropdown': ShftDropdown;
+    'shft-flex': ShftFlex;
+    'shft-radio': ShftRadio;
+    'shft-slider': ShftSlider;
+    'shft-tab': ShftTab;
+    'shft-tabs': ShftTabs;
+    'shft-textbox': ShftTextbox;
+    'shft-window': ShftWindow;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+

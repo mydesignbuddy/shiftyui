@@ -1,0 +1,23 @@
+.demo {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+}
+.demo-nav {
+  background-color: rgb(32, 32, 32);
+  color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  margin: 0;
+  padding: 1.5em;
+  li {
+    display: block;
+    list-style: none;
+    list-style-type: none;
+    padding-bottom: 0.5em;
+  }
+}
+.demo-container {
+  padding: 20px;
+}
