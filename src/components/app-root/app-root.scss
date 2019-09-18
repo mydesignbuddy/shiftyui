@@ -1,0 +1,18 @@
+.app-root {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  .sidebar {
+    background-color: rgb(32, 32, 32);
+    color: #ccc;
+    h1 {
+      margin-left: 1.2em;
+      font-size: 1.25em;
+      font-weight: lighter;
+      margin-bottom: 0.025em;
+    }
+  }
+  main{
+    margin: 40px;
+  }
+}

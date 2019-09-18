@@ -1,8 +1,9 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
     tag: 'demo-button',
-    styleUrl: 'demo-button.css'
+    styleUrl: 'demo-button.css',
+    shadow: false
 })
 export class DemoButton {
     render() {

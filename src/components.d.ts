@@ -7,9 +7,6 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  MatchResults,
-} from '@stencil/router';
-import {
   Sizes,
   Type,
   Variance,
@@ -21,12 +18,9 @@ import {
 } from './components/common/flex';
 
 export namespace Components {
-  interface AppHome {}
-  interface AppProfile {
-    'match': MatchResults;
-  }
   interface AppRoot {}
   interface DemoButton {}
+  interface DemoHome {}
   interface DemoNav {}
   interface PageNotFound {}
   interface ShftButton {
@@ -110,18 +104,6 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
-
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
-
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
@@ -132,6 +114,12 @@ declare global {
   var HTMLDemoButtonElement: {
     prototype: HTMLDemoButtonElement;
     new (): HTMLDemoButtonElement;
+  };
+
+  interface HTMLDemoHomeElement extends Components.DemoHome, HTMLStencilElement {}
+  var HTMLDemoHomeElement: {
+    prototype: HTMLDemoHomeElement;
+    new (): HTMLDemoHomeElement;
   };
 
   interface HTMLDemoNavElement extends Components.DemoNav, HTMLStencilElement {}
@@ -218,10 +206,9 @@ declare global {
     new (): HTMLShftWindowElement;
   };
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'demo-button': HTMLDemoButtonElement;
+    'demo-home': HTMLDemoHomeElement;
     'demo-nav': HTMLDemoNavElement;
     'page-not-found': HTMLPageNotFoundElement;
     'shft-button': HTMLShftButtonElement;
@@ -240,12 +227,9 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface AppHome extends JSXBase.HTMLAttributes<HTMLAppHomeElement> {}
-  interface AppProfile extends JSXBase.HTMLAttributes<HTMLAppProfileElement> {
-    'match'?: MatchResults;
-  }
   interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
   interface DemoButton extends JSXBase.HTMLAttributes<HTMLDemoButtonElement> {}
+  interface DemoHome extends JSXBase.HTMLAttributes<HTMLDemoHomeElement> {}
   interface DemoNav extends JSXBase.HTMLAttributes<HTMLDemoNavElement> {}
   interface PageNotFound extends JSXBase.HTMLAttributes<HTMLPageNotFoundElement> {}
   interface ShftButton extends JSXBase.HTMLAttributes<HTMLShftButtonElement> {
@@ -325,10 +309,9 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'app-home': AppHome;
-    'app-profile': AppProfile;
     'app-root': AppRoot;
     'demo-button': DemoButton;
+    'demo-home': DemoHome;
     'demo-nav': DemoNav;
     'page-not-found': PageNotFound;
     'shft-button': ShftButton;

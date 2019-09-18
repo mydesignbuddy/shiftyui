@@ -1,21 +1,41 @@
-# ShiftyUI
+# Stencil App Starter
 
-A Modern UI Framework. Your UI, your style!
+Stencil is a compiler for building fast web apps using Web Components.
 
-## What Makes Shifty Different?
+Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
 
-Shifty defines common UI components that can easily support most UI style guides. We provide the most popular UI themes and make them easy to customize to your needs. You can also develop your own themes for your own unique style guides.
+Stencil components are just Web Components, so they work in any major framework or with no framework at all. In many cases, Stencil can be used as a drop in replacement for traditional frontend frameworks given the capabilities now available in the browser, though using it as such is certainly not required.
 
-## Built-in UI Themes
+Stencil also enables a number of key capabilities on top of Web Components, in particular Server Side Rendering (SSR) without the need to run a headless browser, pre-rendering, and objects-as-properties (instead of just strings).
 
-- **Material (Roadmap)** - Based on Google's Material Design https://material.io/design/
-- **Fluent (Default)** - Based on Microsoft's Fluent Design https://developer.microsoft.com/en-us/windows/apps/design
-- **Cocoa (In Process)** - Based on Apple's macOS Human Interface Guidelines https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/
-- **Cocoa Touch (Roadmap)** - Based on Apple's iOS Human Interface Guidelines https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+## Getting Started
 
-## Supported Frameworks
+To start a new project using Stencil, clone this repo to a new directory:
 
-- React - https://reactjs.org/
-- Vue - https://vuejs.org/
-- Angular - https://angular.io/
-- Anything - because its W3C Custom Elements (real Web Components)
+```bash
+npm init stencil app
+```
+
+and run:
+
+```bash
+npm start
+```
+
+To build the app for production, run:
+
+```bash
+npm run build
+```
+
+To run the unit tests once, run:
+
+```
+npm test
+```
+
+To run the unit tests and watch for file changes during development, run:
+
+```
+npm run test.watch
+```

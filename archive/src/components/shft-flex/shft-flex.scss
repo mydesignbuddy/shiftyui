@@ -1,0 +1,18 @@
+@import "../vars.scss";
+
+.shft.flex {
+  display: flex;
+  flex-wrap: nowrap;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+}

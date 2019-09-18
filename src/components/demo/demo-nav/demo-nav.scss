@@ -1,0 +1,19 @@
+.demo-nav {
+  font-size: 0.95em;
+  margin: 0;
+  padding: 1.5em;
+  height: 100vh;
+  li {
+    display: block;
+    list-style: none;
+    list-style-type: none;
+    padding-bottom: 0.5em;
+    a {
+      color: #ccc;
+      text-decoration: none;
+    }
+  }
+}
+.demo-container {
+  padding: 20px;
+}

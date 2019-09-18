@@ -1,4 +1,4 @@
-import { Component, Element, Prop } from "@stencil/core";
+import { Component, Element, Prop, h } from "@stencil/core";
 import { Align, Justify } from "../common/flex";
 import { applyClasses } from "../common/classes";
 

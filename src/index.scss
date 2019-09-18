@@ -1,16 +1,21 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 .shft {
-  @import "./components/vars.scss";
-  @import "./components/common/widths.scss";
-  @import "./components/common/states.scss";
-  @import "./components/shft-container/shft-container.scss";
-  @import "./components/shft-button/shft-button.scss";
-  @import "./components/shft-card/shft-card.scss";
-  @import "./components/shft-checkbox/shft-checkbox.scss";
-  @import "./components/shft-dropdown/shft-dropdown.scss";
-  @import "./components/shft-flex/shft-flex.scss";
-  @import "./components/shft-input/shft-textbox.scss";
-  @import "./components/shft-radio/shft-radio.scss";
-  @import "./components/shft-slider/shft-slider.scss";
-  @import "./components/shft-tabs/shft-tabs.scss";
-  @import "./components/shft-window/shft-window.scss";
+  @import "./components/vars";
+  @import "./components/common/widths";
+  @import "./components/common/states";
+  @import "./components/shft-container/shft-container";
+  @import "./components/shft-button/shft-button";
+  @import "./components/shft-card/shft-card";
+  @import "./components/shft-checkbox/shft-checkbox";
+  @import "./components/shft-dropdown/shft-dropdown";
+  @import "./components/shft-flex/shft-flex";
+  @import "./components/shft-input/shft-textbox";
+  @import "./components/shft-radio/shft-radio";
+  @import "./components/shft-slider/shft-slider";
+  @import "./components/shft-tabs/shft-tabs";
+  @import "./components/shft-window/shft-window";
 }

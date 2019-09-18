@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element, Method, Watch } from "@stencil/core";
+import { Component, Prop, State, Element, Method, Watch, h } from "@stencil/core";
 import { waitFor } from '../common/classes';
 
 class TabNode {
@@ -33,10 +33,10 @@ export class Tabs {
     }))
 
     this.tabButtons = this.tabs.map(t => <shft-button data-key={t.key} onClick={() => this.setActiveTab(t.key)}>{t.title}</shft-button>);
-    
+
     this.setActiveTab(this.tabs[0].key);
   }
-  
+
   @Method()
   setActiveTab(key: string) {
     this.host.querySelectorAll('shft-tab').forEach((t: HTMLElement) => {
