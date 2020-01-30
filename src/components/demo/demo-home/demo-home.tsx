@@ -10,9 +10,9 @@ export class AppHome {
   render() {
     return (
       <div class='app-home'>
-        <stencil-route-link url='/profile/stencil'>
+        <stencil-route-link url='/button'>
           <button>
-            Profile page
+            Buttons
           </button>
         </stencil-route-link>
       </div>
